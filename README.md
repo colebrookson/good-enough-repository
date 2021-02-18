@@ -4,7 +4,7 @@ This is an example repository that demonstrates how to simply structure a code b
 maximize reproducibility and ease-of-use for others, while minimizing the number of tools and products used to produce the result. While 
 some of the components of this repository will stay constant through the use of different programming languages and/or IDEs (Integrated Development Environment), I have 
 optimized this particular repo for use with the programming language R, being run through the RStudio IDE. I also assume that this repo
-will be organized and edited via git. 
+will be organized and edited via git. **PLEASE NOTE:** All the data stored in this repository is **fake** and has been made for demonstration purposes only.
 
 ## A quick guide to the components of this repo
 
@@ -16,5 +16,9 @@ use of each of these components and why they're there.
 * A `__main__` file
 * RProject & the `here()` package
 * Code habits in each code file
-* 
+
+## How to use this guide
+
+Please feel free to fork this repository to use on your own! I recommend forking it and keeping the various structures in place so you have an example on your machine with your own set up, and then customize from there!
+
 
