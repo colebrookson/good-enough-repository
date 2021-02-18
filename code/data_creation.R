@@ -88,6 +88,6 @@ env_data$temperature = sample(seq(12.1, 18.5, 0.1),
                               replace = TRUE)
 
 # write the dataframe 
-
+write_csv(env_data, here('./data/environmental-data/temp_salinity.csv'))
 
 
