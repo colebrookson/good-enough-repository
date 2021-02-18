@@ -15,7 +15,7 @@ library(here)
 library(tidyverse)
 
 
-# create species-level data ====================================================
+# create species-level abundance data ==========================================
 
 # make up some list of species and sample w/ replacement from that list
 species = sample(c('fish A', 'fish B', 'fish C', 'fish D', 'fish E',
@@ -39,10 +39,32 @@ abundance = sample(c(0:300),
                    replace = TRUE)
 
 # bind the data into a dataframe
-species_data = data.frame(species, regions, years, abundance)
+species_abundance = data.frame(species, regions, years, abundance)
 
-#write the dataframe
-write_csv(species_data, here('./data/species-data/species_abundance.csv'))
+# write the abundance dataframe
+write_csv(species_abundance, 
+          here('./data/species-data/species_abundance.csv')
+          #note the use of the here() function to use the relative path
+          #name and thus allow this to work on others' personal set-ups
+          )
 
+# create species-level trait data ==============================================
 
+# create some random trait values for body size, habitat, and thermal optimum
+# for each species
+species_names = c('fish A', 'fish B', 'fish C', 'fish D', 'fish E',
+                  'invert A', 'invert B', 'invert C', 'invert D')
+body_size = c(100, 121, 34, 29, 93, 
+              0.13, 1.09, 2.15, 0.67)
+habitat_type = c('nearshore', 'offshore', 'nearshore', 'nearshore', 'offshore',
+                 'offshore', 'offshore', 'nearshore', 'nearshore')
+thermal_optimum = c(15.6, 15.9, 16.1, 14.9, 15.1, 
+                    13.9, 14.7, 16.2, 15.2)
+
+# bind all values into a dataframe
+species_traits = data.frame(species_names, body_size, habitat_type, 
+                            thermal_optimum)
+
+# write the traits dataframe
+write_csv(species_traits, here('./data/species-data/species_traits.csv'))
 

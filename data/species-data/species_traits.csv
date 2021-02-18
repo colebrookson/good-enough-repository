@@ -1,0 +1,10 @@
+species_names,body_size,habitat_type,thermal_optimum
+fish A,100,nearshore,15.6
+fish B,121,offshore,15.9
+fish C,34,nearshore,16.1
+fish D,29,nearshore,14.9
+fish E,93,offshore,15.1
+invert A,0.13,offshore,13.9
+invert B,1.09,offshore,14.7
+invert C,2.15,nearshore,16.2
+invert D,0.67,nearshore,15.2
