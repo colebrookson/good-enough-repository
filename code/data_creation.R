@@ -34,7 +34,7 @@ years = sample(c(2010:2015),
                replace = TRUE)
 
 # make up a series of abundances to pair to the other objects
-abundance = sample(c(0:300),
+abundance = sample(c(1:200),
                    size = 200,
                    replace = TRUE)
 
@@ -61,10 +61,33 @@ habitat_type = c('nearshore', 'offshore', 'nearshore', 'nearshore', 'offshore',
 thermal_optimum = c(15.6, 15.9, 16.1, 14.9, 15.1, 
                     13.9, 14.7, 16.2, 15.2)
 
+# put all vectors in
+
 # bind all values into a dataframe
 species_traits = data.frame(species_names, body_size, habitat_type, 
                             thermal_optimum)
 
 # write the traits dataframe
 write_csv(species_traits, here('./data/species-data/species_traits.csv'))
+
+# create some environmental data ===============================================
+
+# make a dataframe with the nearshore/offshore and region combinations for 
+# a set of years 
+regions = list(years = c(2010:2015),
+               habitat_type = c('nearshore', 'offshore'), 
+               region = c('south', 'north', 'west', 'east'))
+env_data = expand.grid(regions) #makes every possible combination
+
+# make the salinity and temperature columns
+env_data$salinity = sample(seq(34.01, 34.90, 0.01), 
+                           size = 48, 
+                           replace = TRUE)
+env_data$temperature = sample(seq(12.1, 18.5, 0.1), 
+                              size = 48, 
+                              replace = TRUE)
+
+# write the dataframe 
+
+
 
