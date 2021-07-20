@@ -1,0 +1,7 @@
+version: "3.5"
+services:
+  reproducibility-tutorial-repo:
+    build:
+      context: .
+    volumes:
+      - .:/main
