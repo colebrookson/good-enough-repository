@@ -2,11 +2,9 @@
 
 Launch this repo here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colebrookson/good-enough-repository/HEAD)
 
-This is an example repository that demonstrates how to simply structure a code base and repository that comprises a scientific analysis to 
-maximize reproducibility and ease-of-use for others, while minimizing the number of tools and products used to produce the result. While 
+This is an example repository that demonstrates how to simply structure what might be thought of as a 'typical' code base and repository for an ecological research project that comprises a scientific analysis to maximize reproducibility and ease-of-use for others, while minimizing the number of tools and products used to produce the result. While 
 some of the components of this repository will stay constant through the use of different programming languages and/or IDEs (Integrated Development Environment), I have 
-optimized this particular repo for use with the programming language R, being run through the RStudio IDE. I also assume that this repo
-will be organized and edited via git. **PLEASE NOTE:** All the data stored in this repository is **fake** and has been made for demonstration purposes only.
+demo'd this particular repo for use with the programming language [R](https://www.r-project.org/about.html), being run through the [RStudio](https://www.rstudio.com/) IDE. I also assume that this repo will be organized and edited via git. **PLEASE NOTE:** All the data stored in this repository is from the [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) and has been used for demonstration purposes only.
 
 ## A quick guide to the components of this repo
 
