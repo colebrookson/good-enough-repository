@@ -1,6 +1,7 @@
 ########## 
 ##########
-# This main file calls and runs all subsequent R files in this analysis
+# This file pulls the iris data from the built in data set, subsets the 
+# species, and writes a file to be used as "clean" data
 ##########
 ##########
 # AUTHOR: Cole B. Brookson
@@ -10,8 +11,7 @@
 
 # set-up =======================================================================
 
-library(ggplot2)
-library(readr)
+using("ggplot2", "readr", "here")
 data = iris
 
 # make function to subset by species 
@@ -37,5 +37,5 @@ species_subset = function(data, species) {
 setosa_subset = species_subset(data, "setosa")
 
 # write out setosa_subset
-write_csv(setosa_subset, './output/setosa_subset_data.csv')
+write_csv(setosa_subset, here('./output/setosa_subset_data.csv'))
 
