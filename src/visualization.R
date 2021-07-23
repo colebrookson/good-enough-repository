@@ -1,6 +1,6 @@
 ########## 
 ##########
-# This main file calls and runs all subsequent R files in this analysis
+# This file reads in files, makes plots, saves plot
 ##########
 ##########
 # AUTHOR: Cole B. Brookson
@@ -17,10 +17,14 @@ setosa_subset = read_csv(here('./output/setosa_subset_data.csv'))
 new_data = read_csv(here('./output/new_data_for_prediction.csv'))
 
 # plots =======================================================================
+
+# make a simple figure
 simple_fig = ggplot(data = setosa_subset) +
   geom_point(aes(x = Sepal.Length, y = Petal.Width)) +
   labs(x = "sepal length", y = "petal width") +
   theme_bw()
+
+# save plot 
 ggsave(here('./figs/simple_iris_fig.png'), simple_fig)
 
 # plot prediction
