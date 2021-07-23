@@ -11,8 +11,7 @@
 
 # set-up =======================================================================
 
-library(ggplot2)
-library(readr)
+using("ggplot2", "here", "readr") 
 
 data = read_csv(here("./data/raw-data/offspring_data.csv"))
 
@@ -49,7 +48,6 @@ adding_sum(9, 15)
 
 write_csv(data, here("./data/cleaned-data/cleaned_offspring_data.csv"))
 
-# editing this file 
 
 
 
