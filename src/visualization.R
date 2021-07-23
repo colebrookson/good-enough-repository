@@ -10,18 +10,18 @@
 
 # set-up =======================================================================
 
-library(ggplot2)
-library(readr)
+using("here", "ggplot2", "readr")
 
-setosa_subset = read_csv('./output/setosa_subset_data.csv')
-new_data = read_csv('./output/new_data_for_prediction.csv')
+# read in data
+setosa_subset = read_csv(here('./output/setosa_subset_data.csv'))
+new_data = read_csv(here('./output/new_data_for_prediction.csv'))
 
-# make and save a simple plot
+# plots =======================================================================
 simple_fig = ggplot(data = setosa_subset) +
   geom_point(aes(x = Sepal.Length, y = Petal.Width)) +
   labs(x = "sepal length", y = "petal width") +
   theme_bw()
-ggsave('./figs/simple_iris_fig.png', simple_fig)
+ggsave(here('./figs/simple_iris_fig.png'), simple_fig)
 
 # plot prediction
 prediction_plot = ggplot(data = new_data) +
@@ -29,4 +29,6 @@ prediction_plot = ggplot(data = new_data) +
             size = 2, colour = 'red') +
   labs(x = "petal length", y = "sepal length prediction") +
   theme_bw()
-ggsave('./figs/prediction_plot_simple.png', prediction_plot)
+
+# save plot
+ggsave(here('./figs/prediction_plot_simple.png'), prediction_plot)
