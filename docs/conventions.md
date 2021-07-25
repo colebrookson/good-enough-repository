@@ -2,6 +2,42 @@
 
 Using consistent practices for how to set up a repository, write code, and interface with other programs is a really useful and important component of having repositories that can be easily used by others. This set of guidelines is divided into sections and lays out how different components of the repository should be structured. 
 
+## Repo Structure
+
+Every repo should follow the same basic structure for consistency and ease of use - both by collaborators and others wishing to reproduce analyses. At the root of each repo should, at a minumum, be the following: 
+
+* Informative `README.md` file
+* A `__main__.R` file
+* Set of folders for structure
+* [Binder](https://mybinder.org/) launch abilities, which requires*:
+  * An `install.R` file
+  * A `runtime.txt` file
+  * A binder badge in the `README.md`
+* A `.gitignore` file
+* An `.RProj` for the whole repository
+
+Additionally, it is beneficial in addition to (or instead of, depending on the project), include the following files which allow for the repo to be dockerized:
+* A `Dockerfile` file
+* A `docker-compose.yml` file 
+
+Each of these items are described in more detail below. 
+
+### `README.md` file
+
+A `README.md` file is incredibly important as it acts as a type of landing page for your repository. That is, when folks come to your repository for the first time, this is the first thing they will see. As such, there's some key content that should be included. Here is a (far from exhaustive) list of things that could be included in a `README.md` file:
+
+* **A brief description of the project the repo belongs to.** If the repo is being used to house the analysis for a papre, for example, a quick description of what the paper is about, and where to find the paper itself. Ideally, this is done through a link to the pre-print or published work. 
+* **A brief description of what is *in* the repo.** List the contents of the repo very briefly. If the repo contains data and code, simply state that. 
+* **A [binder](https://mybinder.org/)badge.** Using binder is a great way to ensure that anyone who wants to reproduce your analysis can do so without worrying about matching the dependencies of their personal machine with those in the repository. 
+* **A repository DOI.** Every repository should have a DOI attached if it represents a finished analysis, as that is (ideally) how the analysis can be cited in the published paper, allowing anyone reading the paper to easily find the repo. 
+* **Contact info.** List the name and contact info for whoever is responsible for maintaining the repo.
+
+### `__main__.R` file
+
+
+
+### Folder structure
+
 ## Style Guide
 
 This style guide is based largely off the [Tidyverse Style Guide](https://style.tidyverse.org/), and much of the style guidelines here are copied and pasted directly. This assumes you are using the [R](https://www.r-project.org/) language and likely the [RStudio](https://www.rstudio.com/) IDE. It is recommended that you read through and follow the [Tidyverse Style Guide](https://style.tidyverse.org/) but **there are five key components of the style guide, *Files, Syntax, Functions, Pipes, `ggplot2`***, and key components of each are highlighted here: 
