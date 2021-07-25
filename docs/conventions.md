@@ -4,7 +4,7 @@ Using consistent practices for how to set up a repository, write code, and inter
 
 ## Style Guide
 
-This style guide is based largely off the [Tidyverse Style Guide](https://style.tidyverse.org/), and much of the style guidelines here are copied and pasted directly. This assumes you are using the [R](https://www.r-project.org/) language and likely the [RStudio](https://www.rstudio.com/) IDE. It is recommended that you read through and follow the [Tidyverse Style Guide](https://style.tidyverse.org/) but **there are five key components of the style guide, *Files, Syntax, Function, Pipes, `ggplot2`***, and key components of each are highlighted here: 
+This style guide is based largely off the [Tidyverse Style Guide](https://style.tidyverse.org/), and much of the style guidelines here are copied and pasted directly. This assumes you are using the [R](https://www.r-project.org/) language and likely the [RStudio](https://www.rstudio.com/) IDE. It is recommended that you read through and follow the [Tidyverse Style Guide](https://style.tidyverse.org/) but **there are five key components of the style guide, *Files, Syntax, Functions, Pipes, `ggplot2`***, and key components of each are highlighted here: 
 
 * **Files**
   * Organization
@@ -51,4 +51,91 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
   * Comments
     * Each line of a comment should begin with the comment symbol and a single space: #
     * In data analysis code, use comments to record important findings and analysis decisions. If you need comments to explain what your code is doing, consider rewriting your code to be clearer. 
+* **Functions**
+  * Naming
+    * As well as following the general advice for object names, strive to use verbs for function names:
+    ```
+    # Good
+    add_row()
+    permute()
+    
+    # Bad
+    row_adder()
+    permutation()
+    ```
+  * Long lines
+    * If a function definition runs over multiple lines, indent the second line to where the definition starts.
+    ```
+    # Good
+    long_function_name <- function(a = "a long argument",
+                                   b = "another argument",
+                                   c = "another long argument") {
+      # As usual code is indented by two spaces.
+    }
+  
+    # Bad
+    long_function_name <- function(a = "a long argument",
+      b = "another argument",
+      c = "another long argument") {
+      # Here it's hard to spot where the definition ends and the
+      # code begins
+    }
+    ```
+  * Comments
+    * In code, use comments to explain the “why” not the “what” or “how”. Each line of a comment should begin with the comment symbol and a single space: #.
+    ```
+    # Good
 
+    # Objects like data frames are treated as leaves
+    x <- map_if(x, is_bare_list, recurse)
+    
+    # Bad
+    
+    # Recurse only with bare lists
+    x <- map_if(x, is_bare_list, recurse)
+    ``` 
+* **Pipes**
+  * Long Lines 
+    *  If the arguments to a function don’t all fit on one line, put each argument on its own line and indent:
+    ```
+    iris %>%
+     group_by(Species) %>%
+     summarise(
+       Sepal.Length = mean(Sepal.Length),
+       Sepal.Width = mean(Sepal.Width),
+       Species = n_distinct(Species)
+     )
+    ```
+ * **`ggplot2`**
+   * Whitespace
+     * `+` should always have a space before it, and should be followed by a new line. This is true even if your plot has only two layers. After the first step, each line should be indented by two spaces
+   * Long lines
+     * If the arguments to a ggplot2 layer don’t all fit on one line, put each argument on its own line and indent:
+     ```
+     # Good
+     ggplot(aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+       geom_point() +
+       labs(
+         x = "Sepal width, in cm",
+         y = "Sepal length, in cm",
+         title = "Sepal length vs. width of irises"
+       ) 
+     
+     # Bad
+     ggplot(aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+       geom_point() +
+       labs(x = "Sepal width, in cm", y = "Sepal length, in cm", title = "Sepal length vs. width of irises") 
+     ```
+     * ggplot2 allows you to do data manipulation, such as filtering or slicing, within the data argument. Avoid this, and instead do the data manipulation in a pipeline before starting plotting.
+     ```
+     # Good
+     iris %>%
+       filter(Species == "setosa") %>%
+       ggplot(aes(x = Sepal.Width, y = Sepal.Length)) +
+       geom_point()
+     
+     # Bad
+     ggplot(filter(iris, Species == "setosa"), aes(x = Sepal.Width, y = Sepal.Length)) +
+       geom_point()
+    ```
+  
