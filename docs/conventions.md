@@ -6,7 +6,7 @@ Using consistent practices for how to set up a repository, write code, and inter
 
 This style guide is based largely off the [Tidyverse Style Guide](https://style.tidyverse.org/), and much of the style guidelines here are copied and pasted directly. This assumes you are using the [R](https://www.r-project.org/) language and likely the [RStudio](https://www.rstudio.com/) IDE. It is recommended that you read through and follow the [Tidyverse Style Guide](https://style.tidyverse.org/) but **there are five key components of the style guide, *Files, Syntax, Functions, Pipes, `ggplot2`***, and key components of each are highlighted here: 
 
-* **Files**
+### **Files**
   * Organization
     * File names should be meaningful and end in .R. Avoid using special characters in file names - stick with numbers, letters, -, and _.
     * If files should be run in a particular order, prefix them with numbers. If it seems likely you’ll have more than 10 files, left pad with zero:
@@ -27,7 +27,7 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
    ```
    * If your script uses add-on packages, load them all at once at the very beginning of the file. This is more transparent than sprinkling library() calls throughout your code or having hidden dependencies that are loaded in a startup file, such as .Rprofile.
 
-* **Syntax**
+### **Syntax**
   * Object Names
     * Variable and function names should use only lowercase letters, numbers, and _. Use underscores (_) (so called snake case) to separate words within a name.
     * Base R uses dots in function names (`contrib.url()`) and class names (`data.frame`), but it’s better to reserve dots exclusively for the S3 object system. In S3, methods are given the name `function.class`; if you also use . in function and class names, you end up with confusing methods like `as.data.frame.data.frame()`
@@ -51,7 +51,8 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
   * Comments
     * Each line of a comment should begin with the comment symbol and a single space: #
     * In data analysis code, use comments to record important findings and analysis decisions. If you need comments to explain what your code is doing, consider rewriting your code to be clearer. 
-* **Functions**
+
+### **Functions**
   * Naming
     * As well as following the general advice for object names, strive to use verbs for function names:
     ```
@@ -94,7 +95,7 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
     # Recurse only with bare lists
     x <- map_if(x, is_bare_list, recurse)
     ``` 
-* **Pipes**
+### **Pipes**
   * Long Lines 
     *  If the arguments to a function don’t all fit on one line, put each argument on its own line and indent:
     ```
@@ -106,7 +107,7 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
        Species = n_distinct(Species)
      )
     ```
- * **`ggplot2`**
+### **`ggplot2`**
    * Whitespace
      * `+` should always have a space before it, and should be followed by a new line. This is true even if your plot has only two layers. After the first step, each line should be indented by two spaces
    * Long lines
