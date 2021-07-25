@@ -1,24 +1,25 @@
-# How to Make a ~~Perfect~~ Good Enough Repository for Reproducible Science
+# How to Make a ~~Perfect~~ Good Enough Repository for Reproducible Ecological Research
 
 Launch this repo here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colebrookson/good-enough-repository/HEAD)
 
-This is an example repository that demonstrates how to simply structure what might be thought of as a 'typical' code base and repository for an ecological research project that comprises a scientific analysis to maximize reproducibility and ease-of-use for others, while minimizing the number of tools and products used to produce the result. While 
-some of the components of this repository will stay constant through the use of different programming languages and/or IDEs (Integrated Development Environment), I have 
-demo'd this particular repo for use with the programming language [R](https://www.r-project.org/about.html), being run through the [RStudio](https://www.rstudio.com/) IDE. I also assume that this repo will be organized and edited via git. **PLEASE NOTE:** All the data stored in this repository is from the [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) and has been used for demonstration purposes only.
+This is an example repository that demonstrates how to simply structure what might be thought of as a 'typical' code base and repository for an ecological research project that comprises a scientific analysis to maximize reproducibility and ease-of-use for others, while minimizing the number of tools and products used to produce the result. 
+
+While some of the components of this repository will stay constant through the use of different programming languages and/or IDEs (Integrated Development Environment), I have demo'd this particular repo for use with the programming language [R](https://www.r-project.org/about.html), being run through the [RStudio](https://www.rstudio.com/) IDE. I also assume that this repo will be organized and edited via git. **PLEASE NOTE:** All the data stored in this repository is from the [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) and has been used for demonstration purposes only.
 
 ## A quick guide to the components of this repo
 
 These are the main components of this repository that I think are essential to allowing for a simple, reproducbile repo that serves the needs
-of you and your colleagues while you are actively working on it, and then subsequently serves the needs of other scientists after you complete your analysis and the repository is stable and mostly unchanging. You'll find more information about each of these components in the `/docs` folder in the root of this repo. Refer to those for the specific 
-use of each of these components and why they're there. 
+of you and your colleagues while you are actively working on it, and then subsequently serves the needs of other scientists after you complete your analysis and the repository is stable and mostly unchanging. 
+
+You'll find more information about each of these components in the `/docs` folder in the root of this repo. Refer to those for the specific use of each of these components and why they're there. 
 
 * The structure of the repo
-* A `__main__` file
-* RProject & the `here()` package
+* A `__main__.R` file
+* RProject & the `here` package
 * Code habits in each code file
 
 ## How to use this guide
 
-Please feel free to fork this repository to use on your own! I recommend forking it and keeping the various structures in place so you have an example on your machine with your own set up, and then customize from there!
+Please feel free to use this repository as a base structure to base your own off of! I recommend forking it and keeping the various structures in place so you have an example on your machine with your own set up, and then customize from there!
 
 
