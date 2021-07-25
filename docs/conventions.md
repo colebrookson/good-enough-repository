@@ -138,5 +138,5 @@ This style guide is based largely off the [Tidyverse Style Guide](https://style.
      # Bad
      ggplot(filter(iris, Species == "setosa"), aes(x = Sepal.Width, y = Sepal.Length)) +
        geom_point()
-    ```
+     ```
   
