@@ -34,9 +34,29 @@ A `README.md` file is incredibly important as it acts as a type of landing page 
 
 ### `__main__.R` file
 
-
+A `__main__.R` file is one (not the only, but one) way of ensuring ease of use for you, your collaborators, and any others trying to reproduce your code. The point of a `__main__.R` file is to call all the other files (kept in the `src` folder) and run them sequentially such that all the results can be produced simply by sourcing the `__main__.R` file. The example main file in this repository shows one option of structuring such a `__main__.R` file. 
 
 ### Folder structure
+
+#### `src`
+
+This is where all your code lives! Short for "source", `src` is the convential name for the location of all the "source code" for a particular project. I recommend against making sub-folders as it simply complicates the paths to each file. See the style guide below on structuring and naming files. 
+
+#### `data` 
+
+While GitHub is **not** a good long-term storage location for data, it can be useful to store smaller data files (e.g. csv files less than 1GB) on GitHub, to centralize the location of all materials needed for your analysis. In this case, unlike the `src` folder, it can sometimes to useful to separate those folders into `raw-data` and `cleaned-data` folders, that way scripts that read in raw data, can clean and export those data to a separate file, ready to be read into a separate script for analysis. It also makes it easier to know what files to look for if you're new to the repo. 
+
+#### `docs`
+
+This folder contains all the relevant documentation for your repository. This is a good place to store things like pseudocode, documents outlining decisions regarding methods, supplementary information about sampling protocols, metadata, etc. 
+
+#### `figs`
+
+While this folder may not always be necessary, it can be useful to have a folder dedicated to storing the figures associated with your results etc. 
+
+#### `output`
+
+Often, when we run large models, we end up with large objects that we don't necessarily want to have to re-run to get every time we re-start a working session to, say, play with some plots. Similarly, if someone just wants to see how you summarized the output of your model, they might not necessarily want to run the model itself if it might take some considerable time. Therefore, we can save our intermediate objects (often model objects) as `.RDS` objects, which are easily written and read from and into `R`. Store those objects (and the like) in this folder. 
 
 ## Style Guide
 
