@@ -11,7 +11,7 @@ To quote the excellent resource [Ten Simple Rules for Taking Advantage of Git an
 
 ### Reproducibility for *yourself*
 
-There are a number of reasons why you need a repository to be reproducible for yourself. First of all, 
+There are a number of reasons why you need a repository to be reproducible for yourself. First of all, re-running analyses is not something that necessarily happens years down the road, but often is required for whatever reason very shortly after your initial set of results are gathered. Whether a small change at the behest of a supervisor, or to appease a reviewer, having a repository that is as close to one-click reproducible will save you time and headaches galore!
 
 
 
