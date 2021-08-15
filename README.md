@@ -20,6 +20,6 @@ You'll find more information about each of these components in the `/docs` folde
 
 ## How to use this guide
 
-Please feel free to use this repository as a base structure to base your own off of! I recommend forking it and keeping the various structures in place so you have an example on your machine with your own set up, and then customize from there!
+Please feel free to use this repository as a base structure to base your own off of!
 
-
+This repository is part set of documents that describe how to organize these types of projects, and part example repository that can be cloned/forked and edited to suit. If you want to use this repository, I suggest starting by cloning the repo and then reading the `/docs` folder, where explanations are included for all the important things in this repository. 
