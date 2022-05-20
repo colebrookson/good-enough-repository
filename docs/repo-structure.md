@@ -1,6 +1,6 @@
 ## Repo Structure
 
-Every repo should follow the same basic structure for consistency and ease of use - both by collaborators and others wishing to reproduce analyses. At the root of each repo should, at a minumum, be the following: 
+Every repo should follow the same basic structure for consistency and ease of use - both by collaborators and others wishing to reproduce analyses. While repositories need to be tailored for their specific uses by different parties, at the root of each repo should be the following: 
 
 * Informative `README.md` file
 * A `__main__.R` file
